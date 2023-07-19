@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap');
+
+
+.main{
+  font-family: 'Dongle', sans-serif;
+  font-size: 2.5rem;
+  box-sizing: border-box;
+}
+
+nav h3{
+    color: aliceblue;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1b2430;
+    padding: 20px 80px ;
+    box-shadow: 0 5px 15px rgb(0, 0, 0 , 0.06);
+}
+
+#navbar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navbar li{
+    padding-right: 20px;
+    position: relative;
+}
+
+#navbar li a{
+    color: aliceblue;
+    transition: .4s ease-in-out ;
+}
+
+#navbar li a:hover,
+#navbar li a.active
+{
+    color: #17cf97;
+}
+
+#navbar li a:hover::after,
+#navbar li a.active::after{
+    content: "";
+    width: 50%;
+    height: 2px;
+    background-color: #17cf97;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#mobile{
+    display: none;
+}
+
+#mobile{
+    color: aliceblue;
+}
+
+@media screen and (max-width: 769px){
+    #navbar{
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        margin-top: 10px;
+        /* sending content of navbar outside */
+        position: fixed;
+        top: 90px;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background-color: #2a3239;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 40px 0 0 10px;
+        transition: .4s;
+    }
+
+    #navbar.active{
+        right: 0px;
+    }
+
+    #navbar li{
+        margin-bottom: 25px;
+    }
+
+    #mobile{
+        display: block;
+    }
+
+
+
+}
